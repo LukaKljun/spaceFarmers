@@ -391,6 +391,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_bg30g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
