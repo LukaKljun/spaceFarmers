@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="FarmGame"
+run/main_scene="res://scenes/player.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://art/icon.svg"
 
 [dotnet]
 
 project/assembly_name="FarmGame"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
