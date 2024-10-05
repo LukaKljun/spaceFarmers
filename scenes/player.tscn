@@ -402,3 +402,5 @@ position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_q6d3w")
 animation = &"side_idle"
 frame_progress = 0.776667
+
+[node name="Area2D" type="Area2D" parent="."]

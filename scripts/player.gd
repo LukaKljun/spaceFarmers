@@ -53,13 +53,11 @@ func player_movement(delta):
 		
 	#if velocity == Vector2(1,1):
 		#print("1,1 velocity")
-	
-	
-	
+		
 	# updates position depending on velocity
 	velocity = velocity.normalized() * speed
-	position += velocity * delta
-	
+	#position += velocity * delta
+	move_and_slide()
 	
 func play_anim(movement):
 	var dir = current_dir
