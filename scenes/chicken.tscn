@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bqj74y7ym2wxy"]
 
-[ext_resource type="Script" path="res://scenes/chicken.gd" id="1_0o5nj"]
+[ext_resource type="Script" path="res://scripts/chicken.gd" id="1_0o5nj"]
 [ext_resource type="Texture2D" uid="uid://bbo0o24mkjtmt" path="res://art/characters/Chicken.png" id="1_s0763"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjecj"]

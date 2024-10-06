@@ -15,8 +15,16 @@ run/main_scene="res://scenes/player.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://art/icon.svg"
 
+[autoload]
+
+GameManager="*res://scripts/game_manager.gd"
+ApplesHandler="*res://scripts/applesHandler.gd"
+Spremenljivke="*res://scripts/spremenljivke.gd"
+
 [display]
 
+window/size/viewport_width=1080
+window/size/viewport_height=720
 window/stretch/scale=1.5
 
 [dotnet]

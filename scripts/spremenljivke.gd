@@ -17,6 +17,6 @@ func finish_changescenes():
 	if transition_scene == true:
 		transition_scene = false
 		if current_scene == "world":
-			current_scene = "task_apples" 
+			current_scene = "apple" 
 		else:
 			current_scene = "world"

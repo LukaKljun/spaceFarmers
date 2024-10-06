@@ -224,6 +224,7 @@ position = Vector2(-59, -19)
 
 [node name="chicken" parent="." instance=ExtResource("6_pl8ly")]
 position = Vector2(35, 94)
+script = null
 
 [node name="collisions" type="StaticBody2D" parent="."]
 

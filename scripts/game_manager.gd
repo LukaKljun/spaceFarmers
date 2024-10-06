@@ -11,5 +11,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print(apple_score)
+	pass
+	#print(apple_score)
 	#print(appleCount)

@@ -10,19 +10,19 @@ func _ready() -> void:
 func _process(delta):
 	change_scene()
 
-
 func _on_cliff_body_entered(body):
+	print("on cliff body enterd pred ifom", body)
 	if body.has_method("player"):
-		spremenljivke.transition_scene = true
+		Spremenljivke.transition_scene = true
 		print("okej a dela?")
 
 func _on_cliff_body_exited(body):
 	if body.has_method("player"):
-		spremenljivke.transition_scene = false
+		Spremenljivke.transition_scene = false
 	
 func change_scene():
-	if spremenljivke.transition_scene == true:
-		if spremenljivke.current_scene == "world":
-			get_tree().change_scene_to_file("res://scenes/task_apples.tscn")
-			spremenljivke.finish_changescenes()
+	if Spremenljivke.transition_scene == true:
+		if Spremenljivke.current_scene == "world":
+			get_tree().change_scene_to_file("res://scenes/apple.tscn")
+			Spremenljivke.finish_changescenes()
 				

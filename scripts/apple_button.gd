@@ -2,12 +2,12 @@ extends TextureButton
 
 #signal button_pressed
 
-signal applePressed()
+#signal applePressed()
 
 func _on_texture_button_pressed() -> void:
-	print("pressed")
+	#print("pressed")
 	
-	emit_signal("applePressed", "yes?")
+	#emit_signal("applePressed", "yes?")
 	GameManager.apple_score += 1
 	
 	ApplesHandler.delete(self)
@@ -20,7 +20,6 @@ func _on_texture_button_pressed() -> void:
 func _ready() -> void:
 	pass
 	#connect("pressed", self, "_on_texture_button_pressed")
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

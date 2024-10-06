@@ -5,6 +5,7 @@ extends Node2D
 
 #@export var lableTxt : Label
 
+
 # preload apple scene
 var apple_instance = preload("res://scenes/apple.tscn")
 
@@ -31,22 +32,26 @@ func _ready() -> void:
 	
 	var scene_apple = preload("res://scenes/apple.tscn").instantiate()
 	add_child(scene_apple)
-	scene_apple.connect("applePressed", Callable(self, "test"))
+	#scene_apple.connect("applePressed", Callable(self, "test"))
 	
 	#get screen size
 	screenSize = get_viewport().get_visible_rect().size
 	screen_hight = screenSize.x
 	screen_width = screenSize.y
-	print("width: " , screenSize.x , " , hight: " , screenSize.y)
+	#print("width: " , screenSize.x , " , hight: " , screenSize.y)
 	
 	#var appleNode = get_node("res://scripts/apple_button.gd")
 	#print(appleNode)
 	#$appleScoreLable.text = "kill me"
-	spawn()
+	print(Spremenljivke.current_scene)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Spremenljivke.current_scene == "apple":
+		print("appppppellllllllllllllllllllllllll")
+		spawn()
+	
 	#print(appleCount)
 	
 func spawn():

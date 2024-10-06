@@ -3,8 +3,8 @@ extends CharacterBody2D
 const speed = 100
 var current_dir = "none"
 
-
 func _ready():
+	#print("sortiranjeee?????")
 	$AnimatedSprite2D.play("front_idle")
 
 func _physics_process(delta):
@@ -37,7 +37,7 @@ func player_movement(delta):
 		#play_anim(1)
 		#velocity.x = 0
 		velocity.y -= 1
-	print(velocity)
+	#print(velocity)
 	if velocity == Vector2(1,0) or velocity == Vector2(1,1) or velocity == Vector2(1, -1):
 		current_dir = "right"
 	if velocity == Vector2(-1,0) or velocity == Vector2(-1,1) or velocity == Vector2(-1, -1):
