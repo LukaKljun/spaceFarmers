@@ -8,11 +8,13 @@ extends Node2D
 var spawns = 0
 
 # preload apple scene
-var apple_instance = preload("res://scenes/apple.tscn")
+var red_apple_instance = preload("res://scenes/red_apple.tscn")
+var yellow_apple_instance = preload("res://scenes/yellow_apple.tscn")
+var green_apple_instance = preload("res://scenes/green_apple.tscn")
 
 #var appleScore = preload($appleScore)
 
-#screen vars
+#screen vars 
 var screenSize = 0
 var screen_hight = 100
 var screen_width = 100
@@ -21,18 +23,29 @@ var screen_width = 100
 var random = RandomNumberGenerator.new()
 
 # number of apples spawned at once
-var spawnNum = 100
+var spawnNum = 30
 
 # get apple score node
 #var scoreTxt = 0
 
 var label = 0
 
+var scene_red_apple = 0
+var scene_yellow_apple = 0
+var scene_green_apple = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
-	var scene_apple = preload("res://scenes/apple.tscn").instantiate()
-	add_child(scene_apple)
+	scene_red_apple = preload("res://scenes/red_apple.tscn").instantiate()
+	add_child(scene_red_apple)
+	
+	scene_yellow_apple = preload("res://scenes/yellow_apple.tscn").instantiate()
+	add_child(scene_yellow_apple)
+	
+	scene_green_apple = preload("res://scenes/green_apple.tscn").instantiate()
+	add_child(scene_green_apple)
+	
 	#scene_apple.connect("applePressed", Callable(self, "test"))
 	
 	#get screen size
@@ -44,7 +57,7 @@ func _ready() -> void:
 	#var appleNode = get_node("res://scripts/apple_button.gd")
 	#print(appleNode)
 	#$appleScoreLable.text = "kill me"
-	print(Spremenljivke.current_scene)
+	#print(Spremenljivke.current_scene)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -64,15 +77,27 @@ func _process(delta: float) -> void:
 	
 func spawn():
 	for i in spawnNum:
-		var obj = apple_instance.instantiate()
+		var obj = red_apple_instance.instantiate()
 		#print(obj)
 		obj.position = get_random_pos()
 		#add obj to scene
 		add_child(obj)
+	for j in spawnNum:
+		var obj = yellow_apple_instance.instantiate()
+		obj.position = get_random_pos()
+		add_child(obj)
+	for k in spawnNum:
+		var obj = green_apple_instance.instantiate()
+		obj.position = get_random_pos()
+		add_child(obj)
 	
-func delete(deleteThis):
+func delete(deleteThis, thisName):
 	#updateScore()
 	#print("deleteee this bish")
+	if thisName == "redButton" or thisName == "greenButton":
+		GameManager.apple_score -= 1
+	elif thisName == "yellowButton":
+		GameManager.apple_score += 1
 	deleteThis.queue_free()
 	
 func get_random_pos():

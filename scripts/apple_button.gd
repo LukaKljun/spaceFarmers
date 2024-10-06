@@ -6,11 +6,11 @@ extends TextureButton
 
 func _on_texture_button_pressed() -> void:
 	#print("pressed")
-	
+	print(self.name)
 	#emit_signal("applePressed", "yes?")
-	GameManager.apple_score += 1
+	#GameManager.apple_score += 1
 	
-	ApplesHandler.delete(self)
+	ApplesHandler.delete(self, self.name)
 	#ApplesHandler.spawn()
 	
 	#emit_signal("button_pressed")
@@ -18,7 +18,8 @@ func _on_texture_button_pressed() -> void:
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	print(get_tree())
+	
 	#connect("pressed", self, "_on_texture_button_pressed")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

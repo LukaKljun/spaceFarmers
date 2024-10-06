@@ -9,6 +9,7 @@ func _ready():
 
 func _physics_process(delta):
 	player_movement(delta)
+	current_camera()
 	
 func player():
 	pass
@@ -91,3 +92,11 @@ func play_anim(movement):
 
 func _on_cliff_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.
+
+func current_camera():
+	if HiskaGlobal.current_scene == "world":
+		$world_camera.enabled = true
+		$house_camera.enabled = false
+	elif HiskaGlobal.current_scene == "house":
+		$world_camera.enabled = false
+		$house_camera.enabled = true

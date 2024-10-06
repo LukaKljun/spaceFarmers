@@ -7,6 +7,8 @@ var transition_scene = false
 
 var spawnApple = false
 
+
+
 #you dont need that
 var player_exit_cliffside_posy = 0
 var player_exit_cliffside_posx = 0

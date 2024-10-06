@@ -1,21 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://cj5hixcs0nrng"]
+[gd_scene load_steps=6 format=3 uid="uid://cj5hixcs0nrng"]
 
-[ext_resource type="Texture2D" uid="uid://bl44aogcfwqt2" path="res://sprites/temp/biggerBack.png" id="1_2w68s"]
 [ext_resource type="Script" path="res://scripts/applesHandler.gd" id="1_c4bkh"]
+[ext_resource type="Script" path="res://scenes/apple_score_lable.gd" id="2_khu76"]
+
+[sub_resource type="Gradient" id="Gradient_nv378"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0.701961, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_g8wfn"]
+gradient = SubResource("Gradient_nv378")
+
+[sub_resource type="LabelSettings" id="LabelSettings_011dw"]
 
 [node name="sortiranje" type="Node2D"]
 script = ExtResource("1_c4bkh")
 
 [node name="background" type="TextureRect" parent="."]
-offset_right = 40.0
+offset_right = 4000.0
 offset_bottom = 40.0
-texture = ExtResource("1_2w68s")
+texture = SubResource("GradientTexture1D_g8wfn")
+expand_mode = 4
 
 [node name="appleScoreLable" type="Label" parent="."]
-offset_right = 85.0
-offset_bottom = 47.0
+offset_left = 20.0
+offset_top = 12.0
+offset_right = 105.0
+offset_bottom = 59.0
 theme_override_font_sizes/font_size = 20
 text = "Score: 0"
+label_settings = SubResource("LabelSettings_011dw")
+script = ExtResource("2_khu76")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0

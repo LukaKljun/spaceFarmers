@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b1smg668rf0kj"]
+[gd_scene load_steps=25 format=3 uid="uid://b1smg668rf0kj"]
 
 [ext_resource type="Texture2D" uid="uid://b4j570sffkob6" path="res://art/tilesets/grass.png" id="1_8137c"]
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_v06bl"]
@@ -274,6 +274,9 @@ sources/12 = SubResource("TileSetAtlasSource_nentg")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kr8ic"]
 size = Vector2(20, 6)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pyib2"]
+size = Vector2(16.5, 8)
+
 [node name="world" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(288, 177)
@@ -314,5 +317,13 @@ position = Vector2(-17, 170)
 position = Vector2(-153, -40)
 shape = SubResource("RectangleShape2D_kr8ic")
 
+[node name="vratahise" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vratahise"]
+position = Vector2(204, 267)
+shape = SubResource("RectangleShape2D_pyib2")
+
 [connection signal="body_entered" from="cliff" to="." method="_on_cliff_body_entered"]
 [connection signal="body_exited" from="cliff" to="." method="_on_cliff_body_exited"]
+[connection signal="body_entered" from="vratahise" to="." method="_on_vratahise_body_entered"]
+[connection signal="body_exited" from="vratahise" to="." method="_on_vratahise_body_exited"]

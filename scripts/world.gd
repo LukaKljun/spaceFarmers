@@ -9,6 +9,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	change_scene()
+	gointo_house()
 
 func _on_cliff_body_entered(body):
 	print("on cliff body enterd pred ifom", body)
@@ -31,3 +32,19 @@ func change_scene():
 			Spremenljivke.finish_changescenes()
 			#Spremenljivke.transition_scene = false
 				
+
+
+func _on_vratahise_body_entered(body: Node2D) -> void:
+	if body.has_method("player"):
+		HiskaGlobal.transition_scene = true
+		
+
+func _on_vratahise_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.
+	
+	
+func gointo_house():
+	if HiskaGlobal.transition_scene == true:
+		if HiskaGlobal.current_scene == "world":
+			get_tree().change_scene_to_file("res://scenes/house.tscn")
+			HiskaGlobal.finish_changescenes()
