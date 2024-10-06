@@ -10,6 +10,8 @@ func _ready():
 func _physics_process(delta):
 	player_movement(delta)
 	
+func player():
+	pass
 	
 func player_movement(delta):
 	
@@ -85,3 +87,7 @@ func play_anim(movement):
 			anim.play("front_walk")
 		elif movement == 0:
 			anim.play("front_idle")
+
+
+func _on_cliff_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
