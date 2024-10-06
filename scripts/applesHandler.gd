@@ -5,6 +5,7 @@ extends Node2D
 
 #@export var lableTxt : Label
 
+var spawns = 0
 
 # preload apple scene
 var apple_instance = preload("res://scenes/apple.tscn")
@@ -48,9 +49,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Spremenljivke.current_scene == "apple":
-		print("appppppellllllllllllllllllllllllll")
+	#print(Spremenljivke.current_scene)
+	#if Spremenljivke.current_scene == "sortiranje":
+	#	print("appppppellllllllllllllllllllllllll")
+	#	spawn()
+	#	Spremenljivke.transition_scene = false
+		
+	if Spremenljivke.spawnApple == true and spawns == 0:
 		spawn()
+		spawns += 1
+		Spremenljivke.spawnApple == true
 	
 	#print(appleCount)
 	
@@ -64,7 +72,7 @@ func spawn():
 	
 func delete(deleteThis):
 	#updateScore()
-	print("deleteee this bish")
+	#print("deleteee this bish")
 	deleteThis.queue_free()
 	
 func get_random_pos():
